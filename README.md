@@ -10,7 +10,7 @@
     id: 1,
     first_name: 'string',
     last_name: 'string',
-    email: 'string',
+    email: 'example@academlo.com',
     password: 'string',
     birthday: 'YYYY/MM/DD'
 }
