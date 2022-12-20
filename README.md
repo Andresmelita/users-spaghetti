@@ -4,7 +4,7 @@
 
 ---- 
 
-- El modelo de Users empleado presenta los siguientes valores: 
+- El modelo de Users empleado presenta la siguiente estructura: 
 ```javascript
 {
     id: 1,
