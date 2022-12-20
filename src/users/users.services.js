@@ -60,7 +60,7 @@ const patchUser = (req, res) => {
         })
 }
 
-const deleteUser = () => {
+const deleteUser = (req, res) => {
     const id = req.params.id;
     userControllers.deleteUser(id)
         .then((data) => {

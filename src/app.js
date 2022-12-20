@@ -1,31 +1,32 @@
 const express = require('express')
 
-const app = express()
+//? files
 const db = require('./utils/database')
-const port = require('../config').api.port // definición del puerto
+const config = require('../config')
+const userRouter = require('./users/users.router')
 
+//? initial configuration
+const app = express()
+app.use(express.json()) 
 
-
-//* Autenticar base de datos (si conexión fue exitosa) - *Este es sólo informativo*
+//? database authentication (informative)
 db.authenticate()
     .then(() => console.log('Database Authenticated'))
     .catch((err) => console.log(err))
 
-//* Sincronizar base de datos
+//? database synchronization (informative)
 db.sync()
     .then(() => console.log('Database Synced'))
     .catch((err) => console.log(err))
 
-//* habilitar formato .json dentro de las peticiones
-app.use(express.json()) 
-
-//* aviso servidor activo
+//? notice: server active
 app.get('/', (req, res) => {
     res.status(200).json({message: 'Ok!'})
 }) 
 
+//? route prefix
 app.use('/api/v1/users', userRouter)
 
-app.listen(() => {
-    console.log(`Server started at port ${port}`)
+app.listen(config.api.port, () => {
+    console.log(`Server started at port ${config.api.host}`)
 })

@@ -1,18 +1,28 @@
-const { INTEGER } = require('sequelize')
 const Users = require('../models/users.models')
 
 
 const findAllUsers = async () => {
-    const users = await Users.findAll()
+    const users = await Users.findAll({
+        attributes: {
+            exclude: ['password', 'createdAt', 'updatedAt']
+        }
+    })
     return users
 }
 
 const findUserById = async (id) => {
-    const user = await Users.findOne()
+    const user = await Users.findOne({
+        attributes: {
+            exclude: ['password', 'createdAt', 'updatedAt']
+        },
+        where: {
+            id: id
+        }
+    })
     return user
 }
 
-const createUser = async (id) => {
+const createUser = async (obj) => {
     const newUser = await Users.create({
         id: obj.id,
         first_name: obj.first_name,

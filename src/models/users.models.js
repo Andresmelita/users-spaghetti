@@ -1,21 +1,21 @@
 const {DataTypes} = require('sequelize')
 
-const dataBase = require('../utils/database')
+const db = require('../utils/database')
 
-const Users = dataBase.define('users' ,{
+const Users = db.define('users' ,{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    firstName: {
+    first_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
             len: [2, 50]
         }
     },
-    lastName: {
+    last_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
