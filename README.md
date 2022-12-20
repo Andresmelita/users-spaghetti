@@ -18,7 +18,7 @@
 
 - se encuentran las acciones de CRUD para los usuarios con sus respectivos verbos (get, post, patch y delete)
 
-> las rutas permitidas que se pueden manejar son las siguientes: 
+> las rutas permitidas que se pueden manejar son: 
 
     - localhost:9000/api/v1/users
     - localhost:9000/api/v1/users/:id
