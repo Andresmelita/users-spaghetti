@@ -4,7 +4,7 @@
 
 ---- 
 
-- modelo de Users con almenos los siguientes valores: 
+- El modelo de Users empleado presenta los siguientes valores: 
 ```javascript
 {
     id: 1,
